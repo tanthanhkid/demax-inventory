@@ -1,0 +1,22 @@
+# Breakdown công việc: Thiết kế CSDL (Bình)
+
+- [ ] Chuẩn bị công cụ thiết kế ERD
+- [ ] Thiết kế bảng `kho`
+- [ ] Thiết kế bảng `bin`
+- [ ] Thiết kế bảng `vat_tu` (SKU)
+- [ ] Thiết kế bảng `don_vi_tinh`
+- [ ] Thiết kế bảng `nhom_vat_tu`
+- [ ] Thiết kế bảng `nha_cung_cap`
+- [ ] Thiết kế bảng `bom`
+- [ ] Thiết kế bảng `bom_chi_tiet`
+- [ ] Thiết kế bảng `nguoi_dung`
+- [ ] Thiết kế bảng `vai_tro`
+- [ ] Thiết kế bảng liên kết `vai_tro_quyen`
+- [ ] Thiết kế bảng giao dịch `grn`
+- [ ] Thiết kế bảng giao dịch `issue`
+- [ ] Thiết kế bảng giao dịch `dieu_chuyen`
+- [ ] Thiết kế bảng `kiem_ke_dieu_chinh`
+- [ ] Thiết kế bảng `phieu_yeu_cau_mua` (PR)
+- [ ] Thiết kế bảng `don_mua_hang` (PO)
+- [ ] Rà soát quan hệ và khóa ngoại
+- [ ] Sinh script migration ban đầu
