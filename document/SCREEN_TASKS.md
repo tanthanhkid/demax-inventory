@@ -1,0 +1,28 @@
+# Breakdown công việc: Thiết kế & phát triển màn hình (Lan)
+
+- [ ] Tạo layout chung và navigation
+- [ ] Thiết kế UI màn hình đăng nhập
+- [ ] Kết nối API đăng nhập và xử lý validate
+- [ ] Thiết kế layout dashboard
+- [ ] Lấy dữ liệu và hiển thị dashboard
+- [ ] Thiết kế màn hình danh sách kho
+- [ ] Thiết kế form tạo/sửa kho
+- [ ] Kết nối API cho màn hình kho
+- [ ] Thiết kế màn hình quản lý bin
+- [ ] Thiết kế màn hình danh sách vật tư
+- [ ] Thiết kế form tạo/sửa vật tư
+- [ ] Kết nối API cho màn hình vật tư
+- [ ] Thiết kế form nhập (GRN)
+- [ ] Gửi dữ liệu nhập tới API
+- [ ] Thiết kế form xuất (Issue)
+- [ ] Gửi dữ liệu xuất tới API
+- [ ] Thiết kế form điều chuyển
+- [ ] Gửi dữ liệu điều chuyển tới API
+- [ ] Thiết kế màn hình danh sách BOM
+- [ ] Thiết kế màn hình chi tiết BOM
+- [ ] Kết nối API cho màn hình BOM
+- [ ] Thiết kế màn hình yêu cầu lãnh vật tư
+- [ ] Thiết kế màn hình phiếu yêu cầu mua (PR)
+- [ ] Thiết kế màn hình đơn mua hàng (PO)
+- [ ] Thiết kế màn hình báo cáo tồn kho
+- [ ] Áp dụng phân quyền hiển thị UI

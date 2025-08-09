@@ -1,0 +1,23 @@
+# Breakdown công việc: Xây dựng API (Châu)
+
+- [ ] Khởi tạo project API và cài đặt dependencies
+- [ ] Implement `POST /auth/login`
+- [ ] CRUD kho
+- [ ] CRUD bin
+- [ ] CRUD vật tư (SKU)
+- [ ] CRUD đơn vị tính
+- [ ] CRUD nhóm vật tư
+- [ ] CRUD nhà cung cấp
+- [ ] CRUD BOM & BOM chi tiết
+- [ ] CRUD người dùng
+- [ ] CRUD vai trò
+- [ ] API giao dịch nhập (GRN)
+- [ ] API giao dịch xuất (Issue)
+- [ ] API giao dịch điều chuyển
+- [ ] API kiểm kê/điều chỉnh
+- [ ] API phiếu yêu cầu mua (PR)
+- [ ] API đơn mua hàng (PO)
+- [ ] Middleware xác thực
+- [ ] Middleware phân quyền
+- [ ] Tài liệu API (Swagger)
+- [ ] Unit test cho endpoint
