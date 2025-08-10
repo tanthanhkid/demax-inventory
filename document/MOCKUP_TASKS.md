@@ -1,17 +1,27 @@
 # Breakdown công việc: Tạo mockup HTML (An)
 
-- [ ] Tạo cấu trúc thư mục và file HTML/CSS mẫu
-- [ ] Mock màn hình đăng nhập
-- [ ] Mock màn hình dashboard
-- [ ] Mock màn hình danh sách kho
-- [ ] Mock màn hình quản lý bin
-- [ ] Mock form nhập (GRN)
-- [ ] Mock form xuất (Issue)
-- [ ] Mock danh sách BOM
-- [ ] Mock chi tiết BOM
-- [ ] Mock màn hình yêu cầu lãnh vật tư theo BOM
-- [ ] Mock màn hình yêu cầu lãnh vật tư chung
-- [ ] Mock màn hình phiếu yêu cầu mua (PR)
-- [ ] Mock màn hình đơn mua hàng (PO)
-- [ ] Mock màn hình báo cáo tồn kho
+- [x] Tạo cấu trúc thư mục và file HTML/CSS mẫu
+- [x] Mock màn hình đăng nhập
+- [x] Mock màn hình dashboard
+- [x] Mock màn hình danh sách kho
+- [x] Mock màn hình quản lý bin
+- [x] Mock form nhập (GRN)
+- [x] Mock form xuất (Issue)
+- [x] Mock phiếu điều chuyển nội bộ
+- [x] Mock phiếu kiểm kê
+- [x] Mock phiếu trả hàng
+- [x] Mock danh sách BOM
+- [x] Mock chi tiết BOM
+- [x] Mock màn hình yêu cầu lãnh vật tư theo BOM
+- [x] Mock màn hình yêu cầu lãnh vật tư chung
+- [x] Mock màn hình phiếu yêu cầu mua (PR)
+- [x] Mock màn hình đơn mua hàng (PO)
+- [x] Mock màn hình báo cáo tồn kho
+- [x] Mock màn hình duyệt phiếu nhập (GRN)
+- [x] Mock màn hình duyệt phiếu xuất (Issue)
+- [x] Mock màn hình duyệt phiếu điều chuyển
+- [x] Mock màn hình duyệt phiếu kiểm kê
+- [x] Mock màn hình duyệt phiếu trả hàng
+- [x] Mock màn hình duyệt phiếu yêu cầu mua (PR)
+- [x] Mock màn hình duyệt đơn mua hàng (PO)
 - [ ] Review mockup với stakeholder và cập nhật
