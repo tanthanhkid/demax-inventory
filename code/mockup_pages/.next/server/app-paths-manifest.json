@@ -1,3 +1,11 @@
 {
-  "/page": "app/page.js"
+  "/grns/page": "app/grns/page.js",
+  "/page": "app/page.js",
+  "/items/page": "app/items/page.js",
+  "/issues/page": "app/issues/page.js",
+  "/transfers/page": "app/transfers/page.js",
+  "/stocktakes/page": "app/stocktakes/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/boms/page": "app/boms/page.js",
+  "/warehouses/page": "app/warehouses/page.js"
 }
