@@ -24,5 +24,8 @@
 - [ ] Thiết kế màn hình yêu cầu lãnh vật tư
 - [ ] Thiết kế màn hình phiếu yêu cầu mua (PR)
 - [ ] Thiết kế màn hình đơn mua hàng (PO)
-- [ ] Thiết kế màn hình báo cáo tồn kho
+- [ ] Thiết kế màn hình báo cáo nhập–xuất–tồn theo thời gian/kho/SKU
+- [ ] Thiết kế đồ thị thiếu hụt theo BOM
+- [ ] Thiết kế màn hình báo cáo tuổi tồn
+- [ ] Thiết kế màn hình truy vết lô/serial
 - [ ] Áp dụng phân quyền hiển thị UI
