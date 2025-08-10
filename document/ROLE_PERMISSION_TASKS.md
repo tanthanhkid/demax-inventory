@@ -7,6 +7,8 @@
 - [ ] Mapping quyền cho role Thu mua
 - [ ] Mapping quyền cho role Duyệt
 - [ ] Mapping quyền cho role CEO
+- [ ] Thiết lập quy tắc SoD: người tạo phiếu ≠ người duyệt cuối
+- [ ] Kiểm tra SoD cho các quy trình GRN, Issue, PR, PO
 - [ ] Viết script seed role & quyền
 - [ ] Áp dụng kiểm tra phân quyền trong API
 - [ ] Kiểm thử truy cập cho từng role

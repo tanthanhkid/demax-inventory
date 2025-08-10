@@ -18,5 +18,9 @@
 - [ ] Thiết kế bảng `kiem_ke_dieu_chinh`
 - [ ] Thiết kế bảng `phieu_yeu_cau_mua` (PR)
 - [ ] Thiết kế bảng `don_mua_hang` (PO)
+- [ ] Thiết kế view/query cho báo cáo nhập–xuất–tồn
+- [ ] Thiết kế view/query thiếu hụt theo BOM
+- [ ] Thiết kế view/query báo cáo tuổi tồn
+- [ ] Thiết kế view truy vết lô/serial
 - [ ] Rà soát quan hệ và khóa ngoại
 - [ ] Sinh script migration ban đầu
