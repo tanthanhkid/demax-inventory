@@ -9,17 +9,25 @@
 - **Dashboard**: Thống kê tổng quan với biểu đồ và bảng dữ liệu
 - **Quản lý kho**: CRUD kho với giao diện thân thiện
 - **Quản lý vật tư**: CRUD vật tư với tìm kiếm và lọc
-- **Phiếu nhập (GRN)**: Tạo và quản lý phiếu nhập kho
+- **Phiếu nhập (GRN)**: Tạo và quản lý phiếu nhập kho với wizard form
+- **Phiếu xuất (Issue)**: Tạo và quản lý phiếu xuất kho
+- **Điều chuyển kho**: Quản lý điều chuyển giữa các kho
+- **Kiểm kê**: Tạo và quản lý phiếu kiểm kê với chênh lệch
+- **BOM Management**: Quản lý Bill of Materials với cấu trúc cây
+- **Yêu cầu mua (PR)**: Tạo và quản lý yêu cầu mua hàng
+- **Đơn mua hàng (PO)**: Quản lý đơn mua hàng với nhà cung cấp
+- **Báo cáo**: Báo cáo tồn kho với filter và thống kê
+- **Cài đặt hệ thống**: Cấu hình toàn diện cho hệ thống
 - **Layout responsive**: Giao diện thích ứng với mọi thiết bị
 - **Theme customization**: Sử dụng màu sắc theo thiết kế DEMAX
 
-### 🚧 Đang phát triển
-- Phiếu xuất (Issue)
-- Điều chuyển kho
-- Kiểm kê
-- BOM management
-- Purchase requests/orders
-- Báo cáo
+### 🚧 Có thể mở rộng thêm
+- Trả hàng (Returns)
+- Truy vết lô/serial
+- Báo cáo nâng cao với biểu đồ
+- Export/Import Excel
+- Barcode/QR scanning
+- Mobile app
 
 ## Cài đặt và chạy
 
@@ -69,7 +77,15 @@ src/
 │   ├── login/             # Trang đăng nhập
 │   ├── warehouses/        # Quản lý kho
 │   ├── items/             # Quản lý vật tư
-│   ├── grns/              # Phiếu nhập
+│   ├── grns/              # Phiếu nhập (GRN)
+│   ├── issues/            # Phiếu xuất (Issue)
+│   ├── transfers/         # Điều chuyển kho
+│   ├── stocktakes/        # Kiểm kê
+│   ├── boms/              # Quản lý BOM
+│   ├── purchase-requests/ # Yêu cầu mua (PR)
+│   ├── purchase-orders/   # Đơn mua hàng (PO)
+│   ├── reports/           # Báo cáo
+│   ├── settings/          # Cài đặt hệ thống
 │   ├── layout.tsx         # Root layout
 │   └── page.tsx           # Dashboard
 ├── components/            # React components
@@ -164,3 +180,10 @@ This project is proprietary software for DEMAX company.
 ## Support
 
 Liên hệ team phát triển để được hỗ trợ kỹ thuật.
+
+Truy cập http://localhost:3000 và đăng nhập với:
+admin / password
+kho1 / password
+sx1 / password
+kt1 / password
+tm1 / password

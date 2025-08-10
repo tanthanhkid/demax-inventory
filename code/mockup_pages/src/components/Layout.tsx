@@ -69,11 +69,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       label: 'Kiểm kê',
     },
     {
-      key: '/returns',
-      icon: <FileTextOutlined />,
-      label: 'Trả hàng',
-    },
-    {
       key: '/boms',
       icon: <FileTextOutlined />,
       label: 'BOM',
