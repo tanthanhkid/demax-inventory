@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Phiếu trả hàng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-secondary">
+  <div class="container py-4">
+<h2>Phiếu trả hàng</h2>
+<form>
+  <div><label>Đối tượng trả</label><input type="text" value="Kho sản xuất"></div>
+  <div><label>Lý do</label><input type="text" value="Thừa vật tư"></div>
+  <div>
+    <table>
+      <tr><th>SKU</th><th>Mô tả</th><th>Số lượng</th><th>ĐVT</th></tr>
+      <tr><td>VT001</td><td>Bulong M8</td><td><input type="number" value="10"></td><td>Cái</td></tr>
+    </table>
+  </div>
+  <button type="submit">Gửi phê duyệt</button>
+</form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
