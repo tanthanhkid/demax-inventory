@@ -86,14 +86,69 @@ sequenceDiagram
     System-->>Receiver: Cập nhật tồn kho
 ```
 
+#### Điều chuyển nội bộ
+```mermaid
+sequenceDiagram
+    participant Src as NV Kho nguồn
+    participant Appr as Duyệt
+    participant Dst as NV Kho đích
+    participant Sys as Hệ thống
+    Src->>Appr: Tạo phiếu điều chuyển
+    Appr->>Dst: Chuyển nhiệm vụ nhận
+    Dst->>Sys: Xác nhận đã nhận
+    Sys-->>Src: Giảm tồn kho nguồn
+    Sys-->>Dst: Tăng tồn kho đích
+```
+
+#### Kiểm kê & điều chỉnh
+```mermaid
+sequenceDiagram
+    participant Staff as NV Kiểm kê
+    participant Appr as Duyệt
+    participant Sys as Hệ thống
+    Staff->>Sys: Tạo phiếu kiểm kê
+    Sys-->>Staff: Danh sách tồn kho
+    Staff->>Sys: Ghi số thực tế
+    Appr->>Sys: Phê duyệt điều chỉnh
+    Sys-->>Staff: Cập nhật tồn kho
+```
+
+#### Trả hàng
+```mermaid
+sequenceDiagram
+    participant Prod as Người trả
+    participant Wh as NV Kho
+    participant Appr as Duyệt
+    participant Sys as Hệ thống
+    Prod->>Wh: Trả vật tư
+    Wh->>Appr: Gửi phiếu trả
+    Appr->>Sys: Phê duyệt
+    Sys-->>Wh: Cập nhật tồn kho
+    Sys-->>Prod: Xác nhận hoàn tất
+```
+
 ### 5.2 Quản lý BOM
 - Tạo/sửa BOM, phiên bản hoá, quyền chỉnh sửa theo vai trò.
 - Thêm vật tư mới khi chưa có trong danh mục qua quy trình đề xuất & duyệt.
+- Phân loại kho theo BOM hoặc Min–Max; tồn < Min tự động gửi yêu cầu mua để duyệt.
 - AC: không xoá BOM đang được tham chiếu; ghi lại lịch sử thay đổi.
+
+```mermaid
+sequenceDiagram
+    participant Tech as Phòng Kỹ thuật
+    participant Appr as Duyệt
+    participant Sys as Hệ thống
+    Tech->>Sys: Tạo BOM nháp
+    Sys-->>Tech: Lưu phiên bản
+    Tech->>Appr: Trình duyệt
+    Appr->>Sys: Phê duyệt & phát hành
+    Sys-->>Tech: BOM hoạt động
+```
 
 ### 5.3 Lãnh vật tư theo BOM/kho chung
 - Tạo phiếu lãnh theo BOM hoặc kho chung.
 - Hệ thống xác định kho liên quan và giao nhiệm vụ cấp phát.
+- Nhân viên kho chỉ cập nhật dòng vật tư thuộc kho mình.
 - Cập nhật số lượng thực cấp phát, chụp bằng chứng, theo dõi trạng thái.
 - AC: audit log cho từng phát sinh; cảnh báo khi tồn < Min hoặc thiếu so với BOM.
 
