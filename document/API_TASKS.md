@@ -21,3 +21,11 @@
 - [ ] Middleware phân quyền
 - [ ] Tài liệu API (Swagger)
 - [ ] Unit test cho endpoint
+- [ ] API báo cáo nhập–xuất–tồn theo thời gian/kho/SKU
+- [ ] API báo cáo thiếu hụt theo BOM
+- [ ] API báo cáo tuổi tồn
+- [ ] API truy vết lô/serial
+- [ ] Kiểm tra SoD trong quy trình duyệt GRN, Issue, PR, PO
+- [ ] Xác nhận hai bước khi quét mã với cảnh báo màu
+- [ ] Cơ chế đối soát kiểm kê định kỳ kèm lưu ảnh chứng từ
+- [ ] Khóa giao dịch tạm thời và xử lý hàng đợi khi tồn âm
