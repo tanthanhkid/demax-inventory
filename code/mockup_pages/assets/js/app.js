@@ -59,12 +59,18 @@ $(document).ready(function() {
         filterTable($(this).closest('.card').find('table'), searchTerm);
     });
 
-    // Date picker initialization
-    $('.date-picker').datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose: true,
-        todayHighlight: true,
-        language: 'vi'
+    // Date picker initialization - Fixed: Use HTML5 date input instead of datepicker
+    $('.date-picker').each(function() {
+        // Set default value to today if empty
+        if (!$(this).val()) {
+            var today = new Date().toISOString().split('T')[0];
+            $(this).val(today);
+        }
+        
+        // Add date validation
+        $(this).on('change', function() {
+            validateDate($(this));
+        });
     });
 
     // Number formatting
@@ -81,29 +87,84 @@ $(document).ready(function() {
     $('.export-btn').on('click', function() {
         exportTable($(this).closest('.card').find('table'));
     });
+
+    // Mobile navigation toggle
+    $('.navbar-toggler').on('click', function() {
+        $('.sidebar').toggleClass('show');
+    });
+
+    // Close sidebar when clicking outside on mobile
+    $(document).on('click', function(e) {
+        if ($(window).width() < 768) {
+            if (!$(e.target).closest('.sidebar, .navbar-toggler').length) {
+                $('.sidebar').removeClass('show');
+            }
+        }
+    });
+
+    // Add loading states to buttons
+    $('.btn-primary, .btn-success').on('click', function() {
+        if (!$(this).hasClass('no-loading')) {
+            showButtonLoading($(this));
+        }
+    });
+
+    // Add animations to cards
+    $('.card').addClass('animate__animated animate__fadeIn');
+    
+    // Add hover animations
+    $('.card').hover(
+        function() { $(this).addClass('shadow-lg'); },
+        function() { $(this).removeClass('shadow-lg'); }
+    );
 });
+
+// Date validation function
+function validateDate(input) {
+    var date = new Date(input.val());
+    var today = new Date();
+    
+    if (date > today) {
+        showAlert('Ngày không được lớn hơn ngày hiện tại', 'warning');
+        input.val(today.toISOString().split('T')[0]);
+    }
+}
+
+// Show button loading state
+function showButtonLoading(button) {
+    var originalText = button.text();
+    button.prop('disabled', true)
+          .html('<span class="spinner-border spinner-border-sm me-2" role="status"></span>Đang xử lý...');
+    
+    // Reset after 2 seconds (simulate API call)
+    setTimeout(function() {
+        button.prop('disabled', false).text(originalText);
+    }, 2000);
+}
 
 // Barcode scanner handler
 function handleBarcodeScan(barcode) {
     console.log('Barcode scanned:', barcode);
     
+    // Show loading
+    showLoading();
+    
     // Simulate API call
-    $.ajax({
-        url: '/api/items/search',
-        method: 'POST',
-        data: { barcode: barcode },
-        success: function(response) {
-            if (response.success) {
-                populateItemFields(response.data);
-                showAlert('Tìm thấy vật tư: ' + response.data.name, 'success');
-            } else {
-                showAlert('Không tìm thấy vật tư với mã: ' + barcode, 'warning');
-            }
-        },
-        error: function() {
-            showAlert('Lỗi kết nối, vui lòng thử lại', 'danger');
-        }
-    });
+    setTimeout(function() {
+        hideLoading();
+        
+        // Mock response
+        var mockItem = {
+            code: barcode,
+            name: 'Vật tư mẫu ' + barcode,
+            group: 'Cơ khí',
+            uom: 'Cái',
+            price: 25000
+        };
+        
+        populateItemFields(mockItem);
+        showAlert('Tìm thấy vật tư: ' + mockItem.name, 'success');
+    }, 1000);
 }
 
 // Form validation
