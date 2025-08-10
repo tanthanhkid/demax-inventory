@@ -1,0 +1,29 @@
+:root {
+  --primary: #0E4F9E;
+  --secondary: #F5F5F5;
+  --accent: #16A34A;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+  --text: #1F2937;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary);
+  color: var(--text);
+}
+.navbar {
+  background-color: var(--primary) !important;
+}
+.navbar .navbar-brand { color: #fff; }
+.navbar .nav-link { color: #fff; }
+.btn-accent {
+  background-color: var(--accent);
+  color: #fff;
+}
+.btn-accent:hover {
+  background-color: #128636;
+  color: #fff;
+}
+.table td, .table th { vertical-align: middle; }
+.table input { width: 100%; }
+.add-row { margin-top: 0.5rem; }
