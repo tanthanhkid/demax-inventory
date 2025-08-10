@@ -1,7 +1,18 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
+:root {
+  --bs-primary: #0E4F9E;
+  --bs-secondary: #F5F5F5;
+  --bs-success: #16A34A;
+  --bs-warning: #F59E0B;
+  --bs-danger: #DC2626;
+  --bs-body-color: #1F2937;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bs-secondary);
+  color: var(--bs-body-color);
+}
+
 header { margin-bottom: 20px; }
 nav a { margin-right: 10px; }
-table { border-collapse: collapse; width: 100%; margin-top: 10px; }
-th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-form div { margin-bottom: 10px; }
-
+.table { margin-top: 10px; }
