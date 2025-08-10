@@ -1,153 +1,166 @@
-# DEMAX Inventory - Mockup Pages
+# DEMAX Inventory System - NextJS Demo
 
-Đây là bộ các trang mockup cho hệ thống quản lý kho DEMAX Inventory, được xây dựng bằng HTML, CSS, Bootstrap và jQuery.
+Đây là phiên bản demo của hệ thống quản lý kho DEMAX được xây dựng bằng NextJS và Ant Design.
 
-## 🚀 Cách sử dụng
+## Tính năng
 
-### 1. Khởi chạy ứng dụng
-Mở file `index.html` trong trình duyệt web để bắt đầu sử dụng hệ thống.
+### ✅ Đã hoàn thành
+- **Authentication**: Đăng nhập với mock data
+- **Dashboard**: Thống kê tổng quan với biểu đồ và bảng dữ liệu
+- **Quản lý kho**: CRUD kho với giao diện thân thiện
+- **Quản lý vật tư**: CRUD vật tư với tìm kiếm và lọc
+- **Phiếu nhập (GRN)**: Tạo và quản lý phiếu nhập kho
+- **Layout responsive**: Giao diện thích ứng với mọi thiết bị
+- **Theme customization**: Sử dụng màu sắc theo thiết kế DEMAX
 
-### 2. Đăng nhập
-- **Tài khoản mặc định:** `admin` / `admin`
-- Hoặc sử dụng bất kỳ tài khoản nào để test
+### 🚧 Đang phát triển
+- Phiếu xuất (Issue)
+- Điều chuyển kho
+- Kiểm kê
+- BOM management
+- Purchase requests/orders
+- Báo cáo
 
-## 📁 Cấu trúc thư mục
+## Cài đặt và chạy
+
+### Yêu cầu hệ thống
+- Node.js 18+ 
+- npm hoặc yarn
+
+### Cài đặt dependencies
+```bash
+npm install
+# hoặc
+yarn install
+```
+
+### Chạy development server
+```bash
+npm run dev
+# hoặc
+yarn dev
+```
+
+Mở [http://localhost:3000](http://localhost:3000) để xem kết quả.
+
+### Build production
+```bash
+npm run build
+npm start
+```
+
+## Tài khoản demo
+
+Có thể sử dụng các tài khoản sau để đăng nhập:
+
+| Username | Password | Vai trò |
+|----------|----------|---------|
+| admin | password | Administrator |
+| kho1 | password | Nhân viên kho |
+| sx1 | password | Nhân viên sản xuất |
+| kt1 | password | Nhân viên kỹ thuật |
+| tm1 | password | Nhân viên thu mua |
+
+## Cấu trúc project
 
 ```
-mockup_pages/
-├── index.html              # Trang chủ
-├── login.html              # Trang đăng nhập
-├── dashboard.html          # Dashboard chính
-├── warehouses.html         # Quản lý kho
-├── items.html             # Quản lý vật tư
-├── grn_form.html          # Form nhập kho
-├── assets/
-│   ├── css/
-│   │   └── style.css      # CSS chung
-│   └── js/
-│       └── app.js         # JavaScript chung
-└── README.md              # File này
+src/
+├── app/                    # NextJS App Router
+│   ├── login/             # Trang đăng nhập
+│   ├── warehouses/        # Quản lý kho
+│   ├── items/             # Quản lý vật tư
+│   ├── grns/              # Phiếu nhập
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Dashboard
+├── components/            # React components
+│   └── Layout.tsx         # Main layout component
+├── data/                  # Mock data
+│   └── mockData.ts        # Tất cả mock data
+├── lib/                   # Utilities
+│   ├── theme.ts           # Ant Design theme
+│   └── utils.ts           # Helper functions
+└── types/                 # TypeScript types
+    └── index.ts           # Type definitions
 ```
 
-## 🎨 Thiết kế UI/UX
+## Công nghệ sử dụng
 
-### Bảng màu chủ đạo
-- **Primary:** #0E4F9E (Xanh dương đậm)
-- **Secondary:** #F5F5F5 (Xám nhạt)
-- **Accent:** #16A34A (Xanh lá)
-- **Warning:** #F59E0B (Cam)
-- **Danger:** #DC2626 (Đỏ)
+- **Next.js 14**: React framework với App Router
+- **Ant Design 5**: UI component library
+- **TypeScript**: Type safety
+- **Tailwind CSS**: Utility-first CSS framework
+- **Day.js**: Date manipulation
+- **Axios**: HTTP client
 
-### Tính năng chính
-- **Responsive Design:** Tương thích với mọi thiết bị
-- **Barcode Scanner:** Hỗ trợ quét mã vạch
-- **Wizard Forms:** Form nhiều bước cho các thao tác phức tạp
-- **Real-time Validation:** Kiểm tra dữ liệu real-time
-- **Interactive Tables:** Bảng tương tác với sắp xếp, lọc
+## Theme và Design
 
-## 📱 Các trang chính
+Hệ thống sử dụng theme tùy chỉnh theo thiết kế DEMAX:
 
-### 1. Dashboard (`dashboard.html`)
-- Thống kê tổng quan
-- Biểu đồ tiến trình phiếu
-- Hoạt động gần đây
-- Cảnh báo tồn kho thấp
+- **Primary**: #0E4F9E (Xanh dương đậm)
+- **Success**: #16A34A (Xanh lá)
+- **Warning**: #F59E0B (Vàng cam)
+- **Error**: #DC2626 (Đỏ)
+- **Background**: #F5F5F5 (Xám nhạt)
 
-### 2. Quản lý kho (`warehouses.html`)
-- Danh sách kho
-- Thêm/sửa/xóa kho
-- Tìm kiếm và lọc
-- Phân trang
+## Tính năng đặc biệt
 
-### 3. Quản lý vật tư (`items.html`)
-- Danh sách vật tư
-- Quét mã vạch
-- Thêm/sửa/xóa vật tư
-- Cảnh báo tồn kho
+### 1. Responsive Design
+- Giao diện thích ứng với desktop, tablet và mobile
+- Sidebar có thể thu gọn
+- Bảng dữ liệu responsive
 
-### 4. Nhập kho (`grn_form.html`)
-- Wizard 3 bước
-- Quét mã vạch vật tư
-- Tính toán tự động
-- Xác nhận thông tin
+### 2. Mock Data Integration
+- Tất cả dữ liệu được mock sẵn
+- Có thể dễ dàng thay thế bằng API thật
+- Dữ liệu phản ánh đúng nghiệp vụ thực tế
 
-## 🔧 Tính năng kỹ thuật
+### 3. User Experience
+- Loading states
+- Error handling
+- Success messages
+- Confirmation dialogs
+- Form validation
 
-### JavaScript Functions
-- `showAlert(message, type)` - Hiển thị thông báo
-- `handleBarcodeScan(barcode)` - Xử lý quét mã vạch
-- `validateForm(form)` - Kiểm tra form
-- `calculateTotals()` - Tính tổng tiền
-- `formatCurrency(amount)` - Định dạng tiền tệ
+### 4. Performance
+- Code splitting tự động
+- Lazy loading components
+- Optimized images
+- Efficient re-renders
 
-### CSS Classes
-- `.barcode-scanner` - Vùng quét mã vạch
-- `.stat-card` - Card thống kê
-- `.status-pending/approved/rejected` - Trạng thái
-- `.required` - Trường bắt buộc
+## Phát triển tiếp theo
 
-## 🎯 Dữ liệu Mockup
+### Backend Integration
+1. Thay thế mock data bằng API calls
+2. Implement authentication với JWT
+3. Add real-time updates
+4. File upload cho chứng từ
 
-### Vật tư mẫu
-- **VT001:** Vít M4x20 (Cơ khí)
-- **VT015:** PCB Mainboard (Điện tử)
-- **VT023:** Thép tấm 2mm (Cơ khí)
-- **VT045:** Màn hình LCD 7" (Điện tử)
+### Tính năng bổ sung
+1. Export/Import Excel
+2. Barcode/QR scanning
+3. Mobile app
+4. Advanced reporting
+5. Workflow automation
 
-### Kho mẫu
-- **WH001:** Kho nguyên liệu chính
-- **WH002:** Kho thành phẩm
-- **WH003:** Kho bán thành phẩm
-- **WH004:** Kho phụ liệu
+### Performance & Security
+1. Add caching layer
+2. Implement rate limiting
+3. Add audit logging
+4. Data encryption
+5. Backup & recovery
 
-## 🚀 Hướng dẫn phát triển
+## Contributing
 
-### Thêm trang mới
-1. Tạo file HTML mới trong thư mục gốc
-2. Copy cấu trúc navigation từ trang có sẵn
-3. Thêm link vào sidebar
-4. Tạo CSS/JS riêng nếu cần
+1. Fork the repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create Pull Request
 
-### Tùy chỉnh giao diện
-1. Chỉnh sửa `assets/css/style.css`
-2. Thêm CSS variables trong `:root`
-3. Sử dụng Bootstrap classes có sẵn
+## License
 
-### Thêm tính năng JavaScript
-1. Chỉnh sửa `assets/js/app.js`
-2. Thêm event handlers
-3. Tạo functions mới
+This project is proprietary software for DEMAX company.
 
-## 📋 Checklist phát triển
+## Support
 
-- [x] Layout chung và navigation
-- [x] Trang đăng nhập
-- [x] Dashboard với biểu đồ
-- [x] Quản lý kho
-- [x] Quản lý vật tư
-- [x] Form nhập kho (wizard)
-- [ ] Form xuất kho
-- [ ] Form điều chuyển
-- [ ] Quản lý BOM
-- [ ] Báo cáo tồn kho
-- [ ] Quản lý người dùng
-- [ ] Phân quyền
-
-## 🔗 Liên kết nhanh
-
-- [Trang chủ](index.html)
-- [Đăng nhập](login.html)
-- [Dashboard](dashboard.html)
-- [Quản lý kho](warehouses.html)
-- [Quản lý vật tư](items.html)
-- [Nhập kho](grn_form.html)
-
-## 📞 Hỗ trợ
-
-Nếu có vấn đề hoặc cần hỗ trợ, vui lòng liên hệ:
-- Email: support@demax.com
-- Phone: +84 123 456 789
-
----
-
-**DEMAX Inventory System** - Hệ thống quản lý kho thông minh
+Liên hệ team phát triển để được hỗ trợ kỹ thuật.
