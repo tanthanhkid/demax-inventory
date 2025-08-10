@@ -11,6 +11,7 @@ context7_documents/
 ├── css/           # Tài liệu CSS
 ├── jquery/        # Tài liệu jQuery
 ├── javascript/    # Tài liệu JavaScript
+├── nextjs/        # Tài liệu Next.js
 └── README.md      # File này
 ```
 
@@ -54,6 +55,15 @@ context7_documents/
 - Error handling
 - Modern JavaScript patterns
 
+### ⚛️ Next.js (`nextjs/`)
+- Next.js framework overview
+- App Router và Pages Router
+- Server Components và Client Components
+- Data fetching và API routes
+- Static generation và Server-side rendering
+- Deployment và optimization
+- Examples và templates
+
 ## Cách sử dụng
 
 1. **Tham khảo nhanh**: Mở file README.md trong thư mục tương ứng
@@ -76,6 +86,8 @@ Tài liệu này được tạo tự động bằng Context7 MCP. Để cập nh
 - [CSS-Tricks](https://css-tricks.com/)
 - [jQuery Documentation](https://api.jquery.com/)
 - [JavaScript.info](https://javascript.info/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Vercel Platform](https://vercel.com)
 
 ## Ghi chú
 
