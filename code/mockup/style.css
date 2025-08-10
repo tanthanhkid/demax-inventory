@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; }
+.navbar { margin-bottom: 1rem; }
+.table td, .table th { vertical-align: middle; }
+.table input { width: 100%; }
+.add-row { margin-top: 0.5rem; }
+
