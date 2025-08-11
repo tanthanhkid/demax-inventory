@@ -17,6 +17,7 @@ import {
 } from '@ant-design/icons';
 import { useRouter, usePathname } from 'next/navigation';
 import { mockUsers } from '@/data/mockData';
+import PageTransition from './PageTransition';
 
 const { Header, Sider, Content } = AntLayout;
 
@@ -194,7 +195,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           borderRadius: 8,
           minHeight: 280,
         }}>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </Content>
       </AntLayout>
     </AntLayout>

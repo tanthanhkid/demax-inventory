@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Row, Col, Card, Statistic, Progress, Table, Tag, Space, Typography, Button } from 'antd';
+import React, { useState } from 'react';
+import { Row, Col, Card, Statistic, Progress, Table, Tag, Space, Typography, Button, message } from 'antd';
 import {
   InboxOutlined,
   ShoppingOutlined,
@@ -9,14 +9,19 @@ import {
   ExclamationCircleOutlined,
   ArrowUpOutlined,
   ArrowDownOutlined,
+  ReloadOutlined,
 } from '@ant-design/icons';
 import { mockDashboardStats, mockChartData, mockGRNs, mockIssues } from '@/data/mockData';
 import { getStatusColor, getStatusText, formatDate } from '@/lib/utils';
 import Layout from '@/components/Layout';
+import { LoadingButton, useLoadingContext } from '@/components';
 
 const { Title, Text } = Typography;
 
 const DashboardPage: React.FC = () => {
+  const [refreshLoading, setRefreshLoading] = useState(false);
+  const { setLoadingMessage } = useLoadingContext();
+
   // Recent transactions for table
   const recentTransactions = [
     ...mockGRNs.slice(0, 3).map(grn => ({
@@ -71,12 +76,34 @@ const DashboardPage: React.FC = () => {
     },
   ];
 
+  const handleRefresh = async () => {
+    setRefreshLoading(true);
+    setLoadingMessage('Đang làm mới dữ liệu...');
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    message.success('Dữ liệu đã được làm mới!');
+    setRefreshLoading(false);
+  };
+
   return (
     <Layout>
       <div>
-        <Title level={2} style={{ marginBottom: 24 }}>
-          Dashboard
-        </Title>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
+          <Title level={2} style={{ margin: 0 }}>
+            Dashboard
+          </Title>
+          <LoadingButton
+            type="primary"
+            icon={<ReloadOutlined />}
+            loading={refreshLoading}
+            loadingText="Đang làm mới..."
+            onClick={handleRefresh}
+          >
+            Làm mới
+          </LoadingButton>
+        </div>
 
         {/* Statistics Cards */}
         <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
