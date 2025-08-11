@@ -55,14 +55,14 @@ const ItemsPage: React.FC = () => {
     {
       title: 'Min/Max',
       key: 'minmax',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <span>{record.min_qty} / {record.max_qty}</span>
       ),
     },
     {
       title: 'Trạng thái',
       key: 'status',
-      render: (_, record: any) => {
+      render: (_: any, record: any) => {
         const isLowStock = record.current_stock < record.min_qty;
         return (
           <Tag color={isLowStock ? 'warning' : 'success'}>
@@ -74,7 +74,7 @@ const ItemsPage: React.FC = () => {
     {
       title: 'Thao tác',
       key: 'actions',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <Space>
           <Button 
             type="link" 

@@ -60,11 +60,11 @@ const PrintComponent: React.FC<PrintComponentProps> = ({
   ];
 
   const handlePrint = useReactToPrint({
-    content: () => printRef.current,
+    content: () => printRef.current as any,
     onAfterPrint: () => {
       if (onPrint) onPrint();
     },
-  });
+  } as any);
 
   const showModal = () => {
     setIsModalVisible(true);

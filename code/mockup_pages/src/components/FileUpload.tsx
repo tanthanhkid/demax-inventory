@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Upload, Button, Modal, List, Image, Space, Typography, Alert, Progress } from 'antd';
+import { Upload, Button, Modal, List, Image, Space, Typography, Progress, message, Alert } from 'antd';
 import { 
   UploadOutlined, 
   FileImageOutlined, 
@@ -31,7 +31,7 @@ interface FileUploadProps {
 interface FileItem {
   uid: string;
   name: string;
-  status: 'uploading' | 'done' | 'error';
+  status: 'uploading' | 'done' | 'error' | 'removed';
   url?: string;
   thumbUrl?: string;
   type: string;
@@ -62,13 +62,13 @@ const FileUpload: React.FC<FileUploadProps> = ({
     
     // Kiểm tra kích thước file
     if (file.size > maxSize * 1024 * 1024) {
-      Alert.error(`File ${file.name} vượt quá kích thước cho phép (${maxSize}MB)`);
+      message.error(`File ${file.name} vượt quá kích thước cho phép (${maxSize}MB)`);
       return;
     }
 
     // Kiểm tra số lượng file
     if (newFileList.length > maxCount) {
-      Alert.error(`Chỉ được tải lên tối đa ${maxCount} file`);
+      message.error(`Chỉ được tải lên tối đa ${maxCount} file`);
       return;
     }
 
@@ -231,7 +231,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
                         <Progress 
                           percent={file.percent} 
                           size="small" 
-                          status={file.status === 'error' ? 'exception' : undefined}
+                          status={(file.status as any) === 'error' ? 'exception' : undefined}
                         />
                       )}
                       {file.status === 'done' && (

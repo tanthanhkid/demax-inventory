@@ -48,14 +48,14 @@ const PurchaseRequestsPage: React.FC = () => {
     {
       title: 'Số vật tư',
       key: 'item_count',
-      render: (_, record: any) => {
+      render: (_: any, record: any) => {
         return record.items?.length || 0;
       },
     },
     {
       title: 'Thao tác',
       key: 'actions',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <Space>
           <Button 
             type="link" 

@@ -63,7 +63,7 @@ const ReportsPage: React.FC = () => {
     {
       title: 'Trạng thái',
       key: 'status',
-      render: (_, record: any) => {
+      render: (_: any, record: any) => {
         const item = mockItems.find(i => i.id === record.item_id);
         if (!item) return <Tag color="default">N/A</Tag>;
         

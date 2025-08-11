@@ -53,7 +53,7 @@ const StocktakesPage: React.FC = () => {
     {
       title: 'Thao tác',
       key: 'actions',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <Space>
           <Button 
             type="link" 

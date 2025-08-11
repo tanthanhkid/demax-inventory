@@ -53,7 +53,7 @@ const PurchaseOrdersPage: React.FC = () => {
     {
       title: 'Tổng tiền',
       key: 'total_amount',
-      render: (_, record: any) => {
+      render: (_: any, record: any) => {
         const total = record.items?.reduce((sum: number, item: any) => 
           sum + (item.quantity * item.unit_price), 0) || 0;
         return formatCurrency(total);
@@ -62,7 +62,7 @@ const PurchaseOrdersPage: React.FC = () => {
     {
       title: 'Thao tác',
       key: 'actions',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <Space>
           <Button 
             type="link" 
@@ -223,7 +223,7 @@ const PurchaseOrdersPage: React.FC = () => {
                 { 
                   title: 'Thành tiền', 
                   key: 'total',
-                  render: (_, record: any) => formatCurrency(record.quantity * record.unit_price)
+                  render: (_: any, record: any) => formatCurrency(record.quantity * record.unit_price)
                 },
               ]}
               dataSource={po.items}

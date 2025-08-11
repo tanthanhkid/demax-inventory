@@ -58,7 +58,7 @@ const GRNsPage: React.FC = () => {
     {
       title: 'Thao tác',
       key: 'actions',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <Space>
           <Button 
             type="link" 
@@ -199,7 +199,7 @@ const GRNsPage: React.FC = () => {
                 { 
                   title: 'Thành tiền', 
                   key: 'total',
-                  render: (_, record: any) => formatCurrency(record.quantity * record.unit_price)
+                  render: (_: any, record: any) => formatCurrency(record.quantity * record.unit_price)
                 },
               ]}
               dataSource={grn.items}

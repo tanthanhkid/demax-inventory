@@ -34,7 +34,7 @@ const DashboardPage: React.FC = () => {
       type: 'Xuất kho',
       typeColor: 'error',
     })),
-  ].sort((a, b) => new Date(b.received_at || b.issued_at).getTime() - new Date(a.received_at || a.issued_at).getTime());
+  ].sort((a, b) => new Date((b as any).received_at || (b as any).issued_at).getTime() - new Date((a as any).received_at || (a as any).issued_at).getTime());
 
   const columns = [
     {

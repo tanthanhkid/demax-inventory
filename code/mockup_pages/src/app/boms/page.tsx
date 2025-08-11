@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Table, Button, Space, Tag, Modal, Form, Input, Select, InputNumber, message, Typography, Card, Tree } from 'antd';
+import { Table, Button, Space, Tag, Modal, Form, Input, Select, InputNumber, message, Typography, Card, Tree, Descriptions } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined, EyeOutlined, BranchesOutlined } from '@ant-design/icons';
 import { mockBOMs, mockBOMItems, mockItems } from '@/data/mockData';
 import { getStatusColor, getStatusText, formatDate } from '@/lib/utils';
@@ -47,7 +47,7 @@ const BOMsPage: React.FC = () => {
     {
       title: 'Số vật tư con',
       key: 'item_count',
-      render: (_, record: any) => {
+      render: (_: any, record: any) => {
         const itemCount = mockBOMItems.filter(item => item.bom_id === record.id).length;
         return itemCount;
       },
@@ -55,7 +55,7 @@ const BOMsPage: React.FC = () => {
     {
       title: 'Thao tác',
       key: 'actions',
-      render: (_, record: any) => (
+      render: (_: any, record: any) => (
         <Space>
           <Button 
             type="link" 
