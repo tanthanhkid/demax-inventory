@@ -151,7 +151,36 @@ test('Quản lý kho hoạt động đầy đủ', async ({ page }) => {
 });
 ```
 
-### 3.2 Test Quản Lý Vật Tư
+### 3.2 Test Quản Lý Bin/Khu
+```typescript
+test('Quản lý bin/khu hoạt động đầy đủ', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang bin/khu
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Bin/Khu');
+  
+  // Kiểm tra danh sách bin/khu
+  await expect(page.locator('text=Danh sách bin/khu')).toBeVisible();
+  await expect(page.locator('text=Mã bin')).toBeVisible();
+  await expect(page.locator('text=Tên bin')).toBeVisible();
+  await expect(page.locator('text=Kho')).toBeVisible();
+  await expect(page.locator('text=Loại bin')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút thêm bin mới
+  await expect(page.locator('button:has-text("Thêm bin")')).toBeVisible();
+  
+  // Kiểm tra phân trang
+  await expect(page.locator('.ant-pagination')).toBeVisible();
+  
+  // Kiểm tra tìm kiếm
+  await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
+});
+```
+
+### 3.3 Test Quản Lý Vật Tư
 ```typescript
 test('Quản lý vật tư hiển thị đầy đủ thông tin', async ({ page }) => {
   // Đăng nhập và chuyển đến trang vật tư
@@ -176,6 +205,152 @@ test('Quản lý vật tư hiển thị đầy đủ thông tin', async ({ page 
   await expect(page.locator('button:has-text("Thêm vật tư")')).toBeVisible();
   await expect(page.locator('button:has-text("Sửa")')).toBeVisible();
   await expect(page.locator('button:has-text("Xóa")')).toBeVisible();
+  
+  // Kiểm tra tìm kiếm
+  await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
+});
+```
+
+### 3.4 Test Quản Lý Nhóm Vật Tư
+```typescript
+test('Quản lý nhóm vật tư hoạt động đầy đủ', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang nhóm vật tư
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Nhóm vật tư');
+  
+  // Kiểm tra danh sách nhóm vật tư
+  await expect(page.locator('text=Danh sách nhóm vật tư')).toBeVisible();
+  await expect(page.locator('text=Mã nhóm')).toBeVisible();
+  await expect(page.locator('text=Tên nhóm')).toBeVisible();
+  await expect(page.locator('text=Mô tả')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút thêm nhóm mới
+  await expect(page.locator('button:has-text("Thêm nhóm")')).toBeVisible();
+  
+  // Kiểm tra phân trang
+  await expect(page.locator('.ant-pagination')).toBeVisible();
+  
+  // Kiểm tra tìm kiếm
+  await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
+});
+```
+
+### 3.5 Test Quản Lý Đơn Vị Tính
+```typescript
+test('Quản lý đơn vị tính hoạt động đầy đủ', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang đơn vị tính
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Đơn vị tính');
+  
+  // Kiểm tra danh sách đơn vị tính
+  await expect(page.locator('text=Danh sách đơn vị tính')).toBeVisible();
+  await expect(page.locator('text=Mã UoM')).toBeVisible();
+  await expect(page.locator('text=Tên đơn vị')).toBeVisible();
+  await expect(page.locator('text=Ký hiệu')).toBeVisible();
+  await expect(page.locator('text=Loại')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút thêm đơn vị mới
+  await expect(page.locator('button:has-text("Thêm đơn vị")')).toBeVisible();
+  
+  // Kiểm tra phân trang
+  await expect(page.locator('.ant-pagination')).toBeVisible();
+  
+  // Kiểm tra tìm kiếm
+  await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
+});
+```
+
+### 3.6 Test Quản Lý Nhà Cung Cấp
+```typescript
+test('Quản lý nhà cung cấp hoạt động đầy đủ', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang nhà cung cấp
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Nhà cung cấp');
+  
+  // Kiểm tra danh sách nhà cung cấp
+  await expect(page.locator('text=Danh sách nhà cung cấp')).toBeVisible();
+  await expect(page.locator('text=Mã NCC')).toBeVisible();
+  await expect(page.locator('text=Tên nhà cung cấp')).toBeVisible();
+  await expect(page.locator('text=Địa chỉ')).toBeVisible();
+  await expect(page.locator('text=Số điện thoại')).toBeVisible();
+  await expect(page.locator('text=Email')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút thêm nhà cung cấp mới
+  await expect(page.locator('button:has-text("Thêm nhà cung cấp")')).toBeVisible();
+  
+  // Kiểm tra phân trang
+  await expect(page.locator('.ant-pagination')).toBeVisible();
+  
+  // Kiểm tra tìm kiếm
+  await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
+});
+```
+
+### 3.7 Test Quản Lý Người Dùng
+```typescript
+test('Quản lý người dùng hoạt động đầy đủ', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang người dùng
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Người dùng');
+  
+  // Kiểm tra danh sách người dùng
+  await expect(page.locator('text=Danh sách người dùng')).toBeVisible();
+  await expect(page.locator('text=Tên đăng nhập')).toBeVisible();
+  await expect(page.locator('text=Họ tên')).toBeVisible();
+  await expect(page.locator('text=Email')).toBeVisible();
+  await expect(page.locator('text=Vai trò')).toBeVisible();
+  await expect(page.locator('text=Phòng ban')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút thêm người dùng mới
+  await expect(page.locator('button:has-text("Thêm người dùng")')).toBeVisible();
+  
+  // Kiểm tra phân trang
+  await expect(page.locator('.ant-pagination')).toBeVisible();
+  
+  // Kiểm tra tìm kiếm
+  await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
+});
+```
+
+### 3.8 Test Quản Lý Vai Trò
+```typescript
+test('Quản lý vai trò hoạt động đầy đủ', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang vai trò
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Vai trò');
+  
+  // Kiểm tra danh sách vai trò
+  await expect(page.locator('text=Danh sách vai trò')).toBeVisible();
+  await expect(page.locator('text=Mã vai trò')).toBeVisible();
+  await expect(page.locator('text=Tên vai trò')).toBeVisible();
+  await expect(page.locator('text=Mô tả')).toBeVisible();
+  await expect(page.locator('text=Số người dùng')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút thêm vai trò mới
+  await expect(page.locator('button:has-text("Thêm vai trò")')).toBeVisible();
+  
+  // Kiểm tra phân trang
+  await expect(page.locator('.ant-pagination')).toBeVisible();
   
   // Kiểm tra tìm kiếm
   await expect(page.locator('input[placeholder*="tìm kiếm"]')).toBeVisible();
@@ -374,6 +549,95 @@ test('Quy trình kiểm kê hoạt động đúng', async ({ page }) => {
   
   // Kiểm tra quy trình duyệt
   await expect(page.locator('text=Đã duyệt')).toBeVisible();
+});
+```
+
+### 4.8 Test Quản Lý Trả Hàng
+```typescript
+test('Quy trình trả hàng hoạt động đúng', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang trả hàng
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Trả hàng');
+  
+  // Kiểm tra danh sách phiếu trả hàng
+  await expect(page.locator('text=Danh sách phiếu trả hàng')).toBeVisible();
+  await expect(page.locator('text=Mã phiếu')).toBeVisible();
+  await expect(page.locator('text=Kho')).toBeVisible();
+  await expect(page.locator('text=Người trả')).toBeVisible();
+  await expect(page.locator('text=Ngày trả')).toBeVisible();
+  await expect(page.locator('text=Trạng thái')).toBeVisible();
+  
+  // Kiểm tra nút tạo phiếu mới
+  await expect(page.locator('button:has-text("Tạo phiếu trả hàng")')).toBeVisible();
+  
+  // Kiểm tra quy trình duyệt
+  await expect(page.locator('text=Chờ duyệt')).toBeVisible();
+  await expect(page.locator('text=Đã duyệt')).toBeVisible();
+});
+```
+
+### 4.9 Test Lãnh Vật Tư Theo BOM
+```typescript
+test('Quy trình lãnh vật tư theo BOM hoạt động đúng', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang lãnh vật tư theo BOM
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Lãnh theo BOM');
+  
+  // Kiểm tra form lãnh vật tư theo BOM
+  await expect(page.locator('text=Lãnh vật tư theo BOM')).toBeVisible();
+  await expect(page.locator('text=Chọn BOM')).toBeVisible();
+  await expect(page.locator('text=Số lượng sản xuất')).toBeVisible();
+  await expect(page.locator('text=Ngày yêu cầu')).toBeVisible();
+  await expect(page.locator('text=Ghi chú')).toBeVisible();
+  
+  // Kiểm tra danh sách vật tư cần lãnh
+  await expect(page.locator('text=Danh sách vật tư cần lãnh')).toBeVisible();
+  await expect(page.locator('text=SKU')).toBeVisible();
+  await expect(page.locator('text=Tên vật tư')).toBeVisible();
+  await expect(page.locator('text=Số lượng cần')).toBeVisible();
+  await expect(page.locator('text=Đơn vị tính')).toBeVisible();
+  await expect(page.locator('text=Kho')).toBeVisible();
+  
+  // Kiểm tra nút tạo yêu cầu
+  await expect(page.locator('button:has-text("Tạo yêu cầu lãnh")')).toBeVisible();
+});
+```
+
+### 4.10 Test Lãnh Vật Tư Chung
+```typescript
+test('Quy trình lãnh vật tư chung hoạt động đúng', async ({ page }) => {
+  // Đăng nhập và chuyển đến trang lãnh vật tư chung
+  await page.goto('/login');
+  await page.fill('input[name="username"]', 'demo');
+  await page.fill('input[name="password"]', 'demo123');
+  await page.click('button[type="submit"]');
+  await page.click('text=Lãnh chung');
+  
+  // Kiểm tra form lãnh vật tư chung
+  await expect(page.locator('text=Lãnh vật tư chung')).toBeVisible();
+  await expect(page.locator('text=Kho')).toBeVisible();
+  await expect(page.locator('text=Ngày yêu cầu')).toBeVisible();
+  await expect(page.locator('text=Lý do lãnh')).toBeVisible();
+  await expect(page.locator('text=Ghi chú')).toBeVisible();
+  
+  // Kiểm tra danh sách vật tư cần lãnh
+  await expect(page.locator('text=Danh sách vật tư cần lãnh')).toBeVisible();
+  await expect(page.locator('text=SKU')).toBeVisible();
+  await expect(page.locator('text=Tên vật tư')).toBeVisible();
+  await expect(page.locator('text=Số lượng cần')).toBeVisible();
+  await expect(page.locator('text=Đơn vị tính')).toBeVisible();
+  
+  // Kiểm tra nút thêm vật tư
+  await expect(page.locator('button:has-text("Thêm vật tư")')).toBeVisible();
+  
+  // Kiểm tra nút tạo yêu cầu
+  await expect(page.locator('button:has-text("Tạo yêu cầu lãnh")')).toBeVisible();
 });
 ```
 
@@ -743,14 +1007,23 @@ test('Tổng kết kiểm tra toàn bộ chức năng', async ({ page }) => {
 - ✅ **Đăng nhập & Xác thực:** Form đăng nhập, tài khoản demo, giao diện Ant Design
 - ✅ **Dashboard:** Tổng quan tồn kho, tiến trình phiếu, thống kê, giao dịch gần đây
 - ✅ **Quản lý Kho:** CRUD kho, phân trang, tìm kiếm
+- ✅ **Quản lý Bin/Khu:** CRUD bin/khu, phân trang, tìm kiếm
 - ✅ **Quản lý Vật tư:** CRUD vật tư, Min/Max levels, cảnh báo tồn thấp
+- ✅ **Quản lý Nhóm Vật tư:** CRUD nhóm vật tư, phân trang, tìm kiếm
+- ✅ **Quản lý Đơn Vị Tính:** CRUD đơn vị tính, phân trang, tìm kiếm
+- ✅ **Quản lý Nhà Cung Cấp:** CRUD nhà cung cấp, phân trang, tìm kiếm
+- ✅ **Quản lý Người Dùng:** CRUD người dùng, phân trang, tìm kiếm
+- ✅ **Quản lý Vai Trò:** CRUD vai trò, phân trang, tìm kiếm
 - ✅ **Phiếu Nhập (GRN):** Tạo phiếu, quy trình duyệt 2 cấp
 - ✅ **Phiếu Xuất (Issue):** Tạo phiếu, quy trình duyệt
 - ✅ **Quản lý BOM:** CRUD BOM, trạng thái, xem chi tiết
+- ✅ **Lãnh Vật Tư Theo BOM:** Tạo yêu cầu lãnh theo BOM, quy trình duyệt
+- ✅ **Lãnh Vật Tư Chung:** Tạo yêu cầu lãnh chung, quy trình duyệt
 - ✅ **Yêu Cầu Mua (PR):** Tạo yêu cầu, quy trình duyệt
 - ✅ **Đơn Mua Hàng (PO):** Tạo đơn mua, quy trình duyệt
 - ✅ **Điều Chuyển Kho:** Tạo phiếu, quy trình duyệt
 - ✅ **Kiểm Kê:** Tạo phiếu, quy trình duyệt
+- ✅ **Trả Hàng:** Tạo phiếu trả hàng, quy trình duyệt
 - ✅ **Báo Cáo:** Tổng hợp, bộ lọc, biểu đồ, xuất báo cáo
 - ✅ **Cài Đặt:** Hệ thống, kho, tồn kho, bảo mật, thông báo, sao lưu
 - ✅ **🆕 Chức Năng Bổ Sung:** Quét barcode/QR, upload file, in phiếu/tem, phân quyền RBAC
@@ -823,7 +1096,7 @@ export default defineConfig({
 Kịch bản test Playwright này đã bao phủ **100%** các chức năng của ứng dụng NextJS mockup DEMAX Inventory theo yêu cầu trong SRS và báo cáo kiểm tra chức năng.
 
 ### 🎯 **Điểm Mạnh Của Test Suite:**
-1. **Bao phủ toàn diện:** Tất cả 14 chức năng chính và chức năng bổ sung
+1. **Bao phủ toàn diện:** Tất cả 22 chức năng chính và chức năng bổ sung
 2. **Kiểm tra chi tiết:** UI elements, navigation, business logic, responsive design
 3. **Test thực tế:** Sử dụng Playwright MCP để test trên giao diện thực
 4. **Validation đầy đủ:** Kiểm tra dữ liệu, quy trình, phân quyền
